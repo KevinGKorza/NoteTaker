@@ -7,6 +7,8 @@
 //creation of server.js file 
 
 //The Front end and back end of the app link, however the ability to save and type your notes do not work yet, still currently working on the functionality
+//App does list and link in the command line 
+
 
 //The Dependencies 
 const express = require('express');
