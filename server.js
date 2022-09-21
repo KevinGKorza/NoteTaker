@@ -6,12 +6,15 @@
 //Remember path strugture
 //creation of server.js file 
 
+//The Front end and back end of the app link, however the ability to save and type your notes do not work yet, still currently working on the functionality
+
 //The Dependencies 
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const databaseInfo = require('./Develop/db/db.json');
 const uuid = require('./helpers/uuid.js');
+//const api = require('./Develop/public/assets/js/index.js')
 
 //Function to write data to JSON file
 const writeToFile = (destination, content) => 
@@ -28,6 +31,7 @@ const app = express();
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+//app.use('/api', api);
 
 //Function to read and append data from a given a file and append content
 const readAndAppend = (content, file) => {
@@ -42,7 +46,7 @@ const readAndAppend = (content, file) => {
     });
 };
 //Remember to set the notes, index, and api routes
-app.get('/notes',function (req, res) {
+app.get('/api/notes',function (req, res) {
     res.sendFile(path.join(__dirname, './Develop/public/notes.html')); 
 });
 
