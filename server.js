@@ -42,6 +42,9 @@ const readAndAppend = (content, file) => {
     });
 };
 //Remember to set the notes, index, and api routes
+app.get('/notes',function (req, res) {
+    res.sendFile(path.join(__dirname, './Develop/public/notes.html')); 
+});
 
 
 
