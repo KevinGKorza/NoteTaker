@@ -14,9 +14,9 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const databaseInfo = require('./Develop/db/db.json');
+const databaseInfo = require('./db/db.json');
 const uuid = require('./helpers/uuid.js');
-//const api = require('./Develop/public/assets/js/index.js')
+
 
 //Function to write data to JSON file
 const writeToFile = (destination, content) => 
@@ -49,7 +49,7 @@ const readAndAppend = (content, file) => {
 };
 //Remember to set the notes, index, and api routes
 app.get('/api/notes',function (req, res) {
-    res.sendFile(path.join(__dirname, './Develop/public/notes.html')); 
+    res.sendFile(path.join(__dirname, './public/notes.html')); 
 });
 
 
@@ -57,20 +57,20 @@ app.get('/api/notes',function (req, res) {
 //Route for notes
 //file path notes.html
 app.get('/notes',function (req, res) {
-    res.sendFile(path.join(__dirname, './Develop/public/notes.html')); 
+    res.sendFile(path.join(__dirname, './public/notes.html')); 
 });
 
 //Route for the homepage
 //index file path index.html
 app.get('/',function (req, res) {
-    res.sendFile(path.join(__dirname,'./Develop/public/index.html')); 
+    res.sendFile(path.join(__dirname,'./public/index.html')); 
 });
 //Route for api
 app.get('/notes',(req, res) => res.json(databaseInfo));
 
 //Delete option?
-app.delete('./Develop/public/notes.html', function (req, res) {
-    res.sendFile(path.join(__dirname, './Develop/public/notes.html'));
+app.delete('./public/notes.html', function (req, res) {
+    res.sendFile(path.join(__dirname, './public/notes.html'));
 });
 
 
@@ -87,7 +87,7 @@ app.post('/notes',(req, res) =>{
         noteText,
         noteid:uuid(),
     };
-    readAndAppend(databaseNote, './Develop/db/db.json');
+    readAndAppend(databaseNote, './db/db.json');
     res.json('added successfully 🚀');
     } else{
         res.error('Error');
