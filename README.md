@@ -40,6 +40,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 
 Screencapture:
+<img width="1341" alt="Screen Shot 2022-09-21 at 5 13 15 PM" src="https://user-images.githubusercontent.com/107637260/191612987-f2d77598-f5cc-44be-b5ee-e4ea0a63f946.png">
 
 
 
