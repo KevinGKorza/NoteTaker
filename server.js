@@ -25,7 +25,7 @@ fs.writeFile(destination, JSON.stringify(content, null, 4),
 
 //Initialization of the app (a url generates in the command line after npm install and node server.js)
 //Server start up
-const PORT = 3002;
+const PORT = process.env.PORT || 3002;
 const app = express();
 
 
