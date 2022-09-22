@@ -36,6 +36,12 @@ app.use(express.json());
 //app.use('/api', api);
 
 //Function to read and append data from a given a file and append content
+ /**
+  * Function to read data from a given file and append the content
+  * @param {object} content 
+  * @param {string} file 
+  * @returns {void}
+  */
 const readAndAppend = (content, file) => {
     fs.readFile(fire, 'UTF-8', (err, data) => {
         if (err) {
